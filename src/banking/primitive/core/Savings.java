@@ -36,7 +36,7 @@ public class Savings extends Account {
 			if (numWithdraws > 3)
 				balance = balance - 1.0f;
 			// KG BVA: should be < 0
-			if (balance <= 0.0f) {
+			if (balance < 0.0f) { //0.0f is not overdrawn so this is changed to strictly less than.
 				setState(State.OVERDRAWN);
 			}
 			return true;
